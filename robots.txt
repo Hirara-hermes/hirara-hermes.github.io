@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hirara-hermes.github.io/sitemap.xml
