@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Builders — Agent Tutorials, Automation & Digital Products</title>
+<meta name="description" content="Practical AI agent tutorials, automation playbooks, and digital products. Learn to build, deploy and monetize AI agents.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230069FF'/><text x='50' y='68' font-size='48' text-anchor='middle' fill='white' font-family='monospace' font-weight='bold'>&gt;_</text></svg>">
+<style>
+  :root { --blue: #0069FF; --dark: #0B1220; --light: #F8FAFC; --gray: #64748B; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--dark); background: var(--light); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero { background: linear-gradient(135deg, #0B1220 0%, #0069FF 100%); color: white; padding: 80px 0 60px; text-align: center; }
+  .hero .logo { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.15); display: inline-flex; align-items: center; justify-content: center; font-family: monospace; font-size: 28px; font-weight: bold; margin-bottom: 24px; }
+  .hero h1 { font-size: 2.8rem; margin-bottom: 16px; letter-spacing: -0.5px; }
+  .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 640px; margin: 0 auto 32px; }
+  .btn { display: inline-block; background: white; color: var(--blue); padding: 14px 32px; border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 1.05rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4); margin-left: 12px; }
+  .btn-outline:hover { border-color: white; }
+
+  /* Sections */
+  section { padding: 64px 0; }
+  h2 { font-size: 2rem; margin-bottom: 16px; letter-spacing: -0.3px; }
+  .subtitle { color: var(--gray); font-size: 1.1rem; margin-bottom: 40px; }
+
+  /* Cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+  .card .icon { font-size: 2rem; margin-bottom: 12px; }
+  .card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+  .card p { color: var(--gray); font-size: 0.95rem; margin-bottom: 16px; }
+  .card .link { color: var(--blue); font-weight: 600; text-decoration: none; }
+  .card .link:hover { text-decoration: underline; }
+
+  /* Product highlight */
+  .product { background: white; border: 2px solid var(--blue); border-radius: 16px; padding: 40px; display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .product img { width: 200px; border-radius: 12px; }
+  .product .info { flex: 1; min-width: 280px; }
+  .product .price { font-size: 1.4rem; font-weight: 700; color: var(--blue); margin: 8px 0; }
+  .product .price .old { text-decoration: line-through; color: var(--gray); font-weight: 400; font-size: 1rem; margin-left: 8px; }
+  .product ul { margin: 12px 0 20px; padding-left: 20px; color: var(--gray); }
+  .badge { display: inline-block; background: #E8F0FE; color: var(--blue); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin: 4px 4px 0 0; }
+
+  /* Newsletter */
+  .newsletter { background: var(--dark); color: white; border-radius: 16px; padding: 40px; text-align: center; }
+  .newsletter h3 { font-size: 1.5rem; margin-bottom: 8px; }
+  .newsletter p { opacity: 0.8; margin-bottom: 24px; }
+  .newsletter form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+  .newsletter input { flex: 1; min-width: 220px; padding: 14px 20px; border-radius: 50px; border: none; font-size: 1rem; }
+  .newsletter button { background: var(--blue); color: white; padding: 14px 28px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+  .newsletter button:hover { background: #0052CC; }
+
+  /* Articles */
+  .article-list { list-style: none; }
+  .article-list li { background: white; border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .article-list a { color: var(--dark); font-weight: 600; text-decoration: none; }
+  .article-list a:hover { color: var(--blue); }
+  .article-list .tag { color: var(--gray); font-size: 0.85rem; }
+
+  footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 32px 0; font-size: 0.9rem; }
+  footer a { color: white; }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="container">
+    <div class="logo">&gt;_</div>
+    <h1>AI Builders</h1>
+    <p>Practical AI agent tutorials, automation playbooks, and digital products. Learn to build, deploy and monetize AI agents — no hype, just things that work.</p>
+    <a class="btn" href="https://buttondown.com/aibuildersletter">Subscribe Free</a>
+    <a class="btn btn-outline" href="https://dev.to/nexmind_ai">Read on dev.to</a>
+  </div>
+</div>
+
+<!-- Products -->
+<section id="products">
+  <div class="container">
+    <h2>📦 Products</h2>
+    <p class="subtitle">Tools and guides I built while automating my own workflow.</p>
+
+    <div class="product">
+      <img src="https://public-files.gumroad.com/zjsyysoa4a5rjuqgtw91k5455kop" alt="AI Agents & Automation Playbook">
+      <div class="info">
+        <h3>🤖 AI Agents & Automation Playbook</h3>
+        <p>The 22-page field guide from first agent to recurring revenue. Architecture patterns, MCP with working code, 10 agent blueprints, 7 revenue models, and a 30-day action plan.</p>
+        <div class="price">$11.99 <span class="old">$14.99</span></div>
+        <div>
+          <span class="badge">Code: LAUNCH11</span>
+          <span class="badge">12-mo updates</span>
+          <span class="badge">Bonus pack</span>
+        </div>
+        <ul>
+          <li>11 chapters, zero fluff</li>
+          <li>10 ready-to-use agent blueprints</li>
+          <li>Copy-paste production prompts</li>
+        </ul>
+        <a class="btn" href="https://helmadin.gumroad.com/l/ai-agents-playbook">Get the Playbook</a>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:24px;">
+      <div class="card">
+        <div class="icon">📅</div>
+        <h3>Social Media Content Calendar 2026</h3>
+        <p>12-month planning system with 90+ caption templates and 200+ evergreen hashtags.</p>
+        <a class="link" href="https://helmadin.gumroad.com/l/social-media-content-calendar">$12.99 →</a>
+      </div>
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>Strategic Planning OKRs</h3>
+        <p>Complete OKR system for teams: scorecards, strategy maps, and meeting templates.</p>
+        <a class="link" href="https://helmadin.gumroad.com/l/jobfjy">$19.99 →</a>
+      </div>
+      <div class="card">
+        <div class="icon">🕌</div>
+        <h3>Islamic Daily Planner</h3>
+        <p>Balance deen and productivity: prayer tracker, Hijri calendar, Ramadan planner.</p>
+        <a class="link" href="https://helmadin.gumroad.com/l/kjqab">$9.99 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Articles -->
+<section id="articles">
+  <div class="container">
+    <h2>📰 Latest Articles</h2>
+    <p class="subtitle">Free chapters and tutorials from the playbook.</p>
+    <ul class="article-list">
+      <li>
+        <a href="https://dev.to/nexmind_ai/how-i-built-an-ai-agent-that-emails-me-a-competitor-report-every-morning-3f74">How I Built an AI Agent That Emails Me a Competitor Report Every Morning</a>
+        <span class="tag">Tutorial</span>
+      </li>
+      <li>
+        <a href="https://dev.to/nexmind_ai/mcp-in-plain-english-what-it-actually-is-free-chapter-from-my-new-book-3c05">MCP in Plain English: What It Actually Is (Free Chapter)</a>
+        <span class="tag">MCP</span>
+      </li>
+      <li>
+        <a href="https://dev.to/nexmind_ai/10-ready-to-use-n8n-automation-templates-to-supercharge-your-business-1n0">10 Ready-to-Use n8n Automation Templates</a>
+        <span class="tag">n8n</span>
+      </li>
+      <li>
+        <a href="https://dev.to/nexmind_ai/build-your-own-mcp-server-in-python-a-hands-on-2026-guide-1ncd">Build Your Own MCP Server in Python</a>
+        <span class="tag">Python</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section id="newsletter">
+  <div class="container">
+    <div class="newsletter">
+      <h3>📬 The AI Builders Letter</h3>
+      <p>One practical AI tutorial, one automation playbook, one insight — every week. Free, no spam.</p>
+      <form action="https://buttondown.com/api/emails/embed-subscribe/aibuildersletter" method="post" target="_blank">
+        <input type="email" name="email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 AI Builders · <a href="https://dev.to/nexmind_ai">dev.to</a> · <a href="https://helmadin.gumroad.com">Gumroad</a> · <a href="https://github.com/Hirara-hermes">GitHub</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
